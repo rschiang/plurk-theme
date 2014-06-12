@@ -4,7 +4,9 @@
 body {
     background: url(http://blog.poren.tw/theme/images/cover.jpg) center top no-repeat fixed;
     background-size: cover;
-    font-family: 'Ubuntu', 'Trebuchet MS', 'XinGothic-TC', 'Hiragino Sans GB', 'Microsoft Jhenghei', 'Droid Sans Fallback', sans-serif;
+    font-family: 'Ubuntu', 'Lucida Grande', 'Trebuchet MS', 'XinGothic-TC', 'Hiragino Sans GB', 'Lantinghei TC', 'Microsoft Jhenghei', 'Droid Sans Fallback', sans-serif;
+    margin-top: -42px;
+    padding-top: 42px;
 }
 
 #page_title {
