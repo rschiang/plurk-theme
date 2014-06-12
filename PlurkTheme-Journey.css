@@ -1,0 +1,209 @@
+/* Journey by Poren Chiang, MIT License https://github.com/RSChiang */
+/* NOTE: The background image will be synchronized with the author's blog. You may freely change the image URL. */
+
+body {
+    background: url(http://blog.poren.tw/theme/images/cover.jpg) center top no-repeat fixed;
+    background-size: cover;
+    font-family: 'Ubuntu', 'Trebuchet MS', 'XinGothic-TC', 'Hiragino Sans GB', 'Microsoft Jhenghei', 'Droid Sans Fallback', sans-serif;
+}
+
+#page_title {
+    font-weight: lighter;
+}
+
+#timeline_holder .plurk_cnt {
+    border-radius: 0 6px 6px;
+    background: rgba(255,255,255,.8);
+    box-shadow: rgba(0,0,0,.75) 0 0 12px;
+    font-size: 14px;
+    line-height: 1.66;
+    transition: background 0.2s ease-out;
+}
+
+#timeline_holder .plurk.display, #timeline_holder .plurk.toggled {
+    width: 450px;
+}
+
+#timeline_holder .display .plurk_cnt, #timeline_holder .toggled .plurk_cnt {
+    background: rgba(255,255,255,.85);
+}
+
+#timeline_holder .plurk_box .plurk_cnt {
+    border-radius: 0 6px 0 0;
+    background: rgba(255,255,255,.95);
+}
+
+#timeline_holder .muted .plurk_cnt {
+    opacity: .6;
+    color: #555;
+}
+
+#timeline_holder .plurk .manager {
+    font-size: 0.85em;
+}
+
+.p_img {
+    border: 0;
+}
+
+.p_img img {
+    border-radius: 3px 0 0 3px;
+}
+
+.response_count {
+    padding: 0 3px;
+    border-radius: 3px;
+    background: 0;
+    font-size: 1.15em;
+    color: rgba(255,255,255,.4);
+}
+.new .response_count {
+    background: 0;
+    color: #fff;
+    text-shadow: rgba(0,0,0,.75) 0 0 12px;
+}
+
+#form_holder .info_box {
+    border-radius: 0 0 6px 6px;
+    margin-bottom: 12px;
+}
+
+#form_holder div.show:last-child {
+    border: 1px solid #000;
+    border-radius: 6px;
+}
+
+#timeline_holder, #bottom_line, #time_show {
+    border: 0;
+    background: 0;
+}
+
+#updater {
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+#timeline_bg {
+    font-weight: lighter;
+}
+
+#filter_tab a {
+    border: 0 !important;
+    background: 0 !important;
+    color: rgba(255,255,255,.6);
+    font-weight: lighter;
+}
+
+#filter_tab .unread_generic {
+    background: 0;
+    color: #fff;
+    text-shadow: rgba(0,0,0,.75) 0 0 6px;
+}
+
+.day_bg .div_inner {
+    background: rgba(255,255,255,.2);
+}
+
+.day_start .bottom_start {
+    color: rgba(255,255,255,.75) !important;
+}
+
+.bottom_start, .bottom_end {
+    color: rgba(255,255,255,.5) !important;
+}
+
+#time_show span {
+    color: rgba(255,255,255,.8);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#empty_timeline_bg {
+    display: none;
+    color: #000;
+}
+
+#empty_timeline_fg {
+    opacity: .95;
+    color: #fff;
+}
+
+#plurk-dashboard, .plurkaction, #toggle_tab li.tt_selected, #more_options_link, #private_plurk_options_link {
+    border: 0 !important;
+    background: 0;
+}
+
+#plurk-dashboard {
+    color: rgba(255,255,255,.9);
+    line-height: 1.33;
+    font-weight: lighter;
+}
+
+#plurk-dashboard h2 {
+    border-radius: 3px;
+    background: rgba(255,255,255,.2);
+}
+
+#plurk-dashboard .dash-segment #dash-profile img.profile-pic {
+    border: 0;
+    border-radius: 12px;
+}
+
+#dash-profile {
+    color: #fff;
+}
+
+#dash-stats th {
+    font-weight: normal;
+}
+
+#plurk-dashboard .user_link, #plurk-dashboard #dashboard-invite, #plurk-dashboard #sharePlurk, #plurk-dashboard .user_link img {
+    border: 0 !important;
+    border-radius: 3px;
+}
+
+input, textarea {
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 3px;
+    box-shadow: none;
+}
+
+textarea#input_big_private, textarea#input_big, textarea#input_permalink {
+    border-radius: 6px;
+}
+
+span.qualifier, span.m_qualifier {
+    border: 0 !important;
+    background: 0 !important;
+    color: #888;
+}
+
+span.q_is { color: #e57c43; }
+span.q_says { color: #e2560b; }
+span.q_needs { color: #7a9a37; }
+span.q_hopes { color: #e05be9; }
+span.q_feels { color: #2d83be; }
+span.q_thinks { color: #689cc1; }
+span.q_wants { color: #8db241; }
+span.q_wishes { color: #5bb017; }
+span.q_has { color: #777; }
+span.q_loves { color: #b20c0c; }
+span.q_hates { color: #111; }
+span.q_asks { color: #8361bc; }
+span.q_will { color: #b46db9; }
+span.q_was { color: #525252; }
+span.q_had { color: #8c8c8c; }
+span.q_likes { color: #cb2728; }
+span.q_shares { color: #a74949; }
+span.q_gives { color: #620e0e; }
+span.q_wonders { color: #2e4e9e; }
+span.q_whispers { color: #32007e; }
+span.q_replurks { color: #3b8610; }
+
+.tooltip_cnt {
+    border-radius: 3px;
+}
+
+#emoticon_selector, .qual_menu {
+    border-radius: 6px;
+}
