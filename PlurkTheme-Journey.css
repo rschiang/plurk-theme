@@ -119,7 +119,7 @@ body {
 }
 
 #empty_timeline_bg {
-    display: none;
+    opacity: 0;
     color: #000;
 }
 
