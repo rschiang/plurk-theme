@@ -5,7 +5,7 @@ body {
     background: url(http://blog.poren.tw/theme/images/cover.jpg) center top no-repeat fixed;
     background-size: cover;
     font-family: 'Ubuntu', 'Lucida Grande', 'Trebuchet MS', 'XinGothic-TC', 'Hiragino Sans GB', 'Lantinghei TC', 'Microsoft Jhenghei', 'Droid Sans Fallback', sans-serif;
-    margin-top: -42px;
+    margin-top: -42px; /* Fix topbar */
     padding-top: 42px;
 }
 
@@ -81,6 +81,7 @@ body {
 }
 
 #updater {
+    margin-top: 42px; /* Fix topbar */
     padding: 3px 8px;
     border-radius: 6px;
 }
@@ -112,6 +113,10 @@ body {
 
 .bottom_start, .bottom_end {
     color: rgba(255,255,255,.5) !important;
+}
+
+#time_show {
+    margin-top: 42px; /* Fix topbar */
 }
 
 #time_show span {
