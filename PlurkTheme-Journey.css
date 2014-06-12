@@ -65,6 +65,10 @@ body {
     text-shadow: rgba(0,0,0,.75) 0 0 12px;
 }
 
+#form_holder {
+    margin-top: 42px; /* Fix topbar */
+}
+
 #form_holder .info_box {
     border-radius: 0 0 6px 6px;
     margin-bottom: 12px;
