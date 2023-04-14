@@ -1,20 +1,28 @@
-/* Journey by Poren Chiang, MIT License https://github.com/RSChiang */
-/* NOTE: The background image will be synchronized with the author's blog. You may freely change the image URL. */
-/* REVISION LOG:
-   - 2019-12-04 Updated to reflect the most recent additions, including frosted glass effect in newer browsers
-*/
+/* Starlight by Poren Chiang, MIT License https://github.com/RSChiang */
 
-html {
-    background-image: url('http://blog.poren.tw/theme/images/cover.jpg') /*, url('https://images.plurk.com/bg/<insert-url-here-for-low-res-bg>.jpg') */;
-    background-position: top center;
+/* Font styles */
+
+'{}:not(*) /*{*/, /*}*/
+body {
+    font-family: Ubuntu, Seravek, Corbel, "PT Sans", "PingFang TC", "Source Han Sans TC", sans-serif;
+} '{}
+
+code {
+    font-family: Menlo, Consolas, Inconsolata, monospace;
+}
+
+/* Main layout */
+
+._lch_ {
+    background-image: url('https://blog.poren.tw/theme/images/cover.jpg');
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
 
-body {
-    background: linear-gradient(to bottom, rgba(0,0,0,.06), rgba(0,0,0,0) 10%, rgba(0,0,0,.12) 50%, rgba(0,0,0,.54)) top center fixed;
+._lc_ {
+    background: linear-gradient(to bottom, rgba(0,0,0,.06), rgba(0,0,0,0) 10%, rgba(0,0,0,.12) 50%,rgba(0,0,0,.54)) top center fixed;
     background-size: cover;
-    font-family: Ubuntu, -apple-system, 'PingFang TC', 'Noto Sans TC', 'Source Han Sans TC', 'Hiragino Sans', 'Century Gothic', 'Microsoft Jhenghei', 'Twitter Color Emoji', sans-serif;
     min-height: 100vh !important;
 }
 
@@ -24,7 +32,7 @@ body {
     box-shadow: rgba(0,0,0,.75) 0 0 6px;
     font-size: 14px;
     line-height: 1.6;
-    transition: all 0.2s ease-out;
+    transition: all 0.14s ease-out;
     backdrop-filter: blur(6px);
 }
 
@@ -68,8 +76,8 @@ body {
     padding-left: 6px;
 }
 
-.emoticon_my + .emoticon_my, 
-.emoticon_my + .emoticon_my_wrapper, 
+.emoticon_my + .emoticon_my,
+.emoticon_my + .emoticon_my_wrapper,
 .emoticon_my_wrapper + .emoticon_my {
     margin-left: -.25em;
 }
@@ -93,6 +101,49 @@ body {
     background: transparent;
     border-radius: 0 0 6px 6px;
     box-shadow: rgba(0,0,0,.75) 0 4px 6px;
+}
+
+.plurk_box .list {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.plurk_box .list .plurk_cnt {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.response-status {
+    margin-top: 0;
+}
+
+.response_box, .plurk_box .mini_form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+}
+
+.response .plurk_cnt {
+    background: rgba(255, 255, 255, 0);
+    transition: background-color 0.15s ease-out;
+}
+
+.response.show-response-manager .plurk_cnt {
+    background: white;
+}
+
+.response-manager {
+    border-radius: 3px;
+    background: rgba(255,255,255,.87);
+    backdrop-filter: blur(8px);
+}
+
+.response .response-manager > div:hover {
+    background: rgba(175, 184, 204, 0.25);
+    color: inherit;
+}
+
+.response .response-manager > div:last-child:hover {
+    border-radius: 0 3px 3px 0;
 }
 
 .plurk_box .mini_form {
@@ -124,19 +175,6 @@ body {
     padding: 4px 4px 2px 2px;
 }
 
-.popView {
-    border: 0;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.3);
-}
-
-.popView .popViewContent {
-    padding: 2px;
-}
-
-.popView .popViewArrow {
-    border-right-color: #c0c0c0;
-}
-
 #timeline_holder, #bottom_line, #time_show {
     border: 0;
     background: transparent;
@@ -153,10 +191,6 @@ body {
 
 #updater .item a:hover {
     color: #e88d43;
-}
-
-#timeline_bg {
-    font-weight: 300;
 }
 
 #filter_tab a {
@@ -205,29 +239,22 @@ body {
     background: rgba(255,255,255,.2);
 }
 
-.day_start .bottom_start {
-    background: transparent;
-    color: rgba(255,255,255,.75) !important;
-}
-
 .bottom_start, .bottom_end {
     background: transparent;
-    color: rgba(255,255,255,.5) !important;
+    color: rgba(255,255,255,.15);
 }
 
-#time_show {
-    opacity: 0;
-    transition: opacity 0.2s ease-out;
+.bottom_start.time_start:nth-child(2n+1) {
+  padding-left: 1px; /* Alternate out timestamps that are too close */
 }
 
-#time_show.show {
-    opacity: 1;
+.day_start {
+    background: transparent;
+    color: rgba(255,255,255,.25);
 }
 
 #time_show span {
-    color: rgba(255,255,255,.8);
-    font-size: 14px;
-    font-weight: 300;
+    color: rgba(255,255,255,.35);
     position: relative;
     top: -16px;
 }
@@ -264,9 +291,10 @@ body {
 }
 
 #plurk-dashboard h2 {
-    border-radius: 3px;
+    border-radius: 4px;
     background: rgba(255,255,255,.2);
     padding: 4px 6px;
+    backdrop-filter: blur(8px);
 }
 
 #plurk_form .m_qualifier {
@@ -274,18 +302,16 @@ body {
 }
 
 #plurk_form .click {
+    background-image: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,.08) 100%);
     font-weight: 400;
+}
+
+#plurk_form .click:active {
+    background-image: linear-gradient(rgba(0,0,0,.1) 0%, rgba(0,0,0,.21) 100%);
 }
 
 #plurk_form .icons_holder {
     margin-top: 6px;
-}
-
-#more_options #more_options_holder {
-    border: 0;
-    border-radius: 6px;
-    background: rgba(0,0,0,.5);
-    color: #eee;
 }
 
 #plurk-dashboard .dash-segment-profile #dash-profile .profile-info, #plurk-dashboard .nick_name {
@@ -294,26 +320,59 @@ body {
 }
 
 #plurk-dashboard .dash-segment #dash-profile img.profile-pic {
-    border: 0;
-    border-radius: 6px;
+    border-radius: 1rem;
 }
 
-#dash-profile {
+#plurk-dashboard .dash-segment-profile #dash-profile {
     color: #fff;
 }
 
+#karma_holder {
+    font-weight: 500;
+}
+
+.karma_hover {
+  font-family: inherit;
+  font-variant: proportional-nums; /* oldstyle-nums has no effect for Ubuntu font */
+}
+
 #plurk-dashboard #dash-stats table th {
+    vertical-align: baseline;
     color: rgba(255, 255, 255, .54);
     opacity: 1;
 }
 
-.award_bar img {
-    border-radius: 6px;
+#plurk-dashboard #dash-stats table td {
+    vertical-align: baseline;
+    font-variant: tabular-nums;
 }
 
-#plurk-dashboard .user_link, #plurk-dashboard #dashboard-invite, #plurk-dashboard #sharePlurk, #plurk-dashboard .user_link img {
-    border: 0 !important;
-    border-radius: 3px;
+#m_or_f { opacity: 0; }
+
+.award_bar div {
+    transition: transform 0.28s ease-out, opacity 0.28s ease-out;
+    transform: scale(1);
+    opacity: 0.7;
+
+    /* Clip out pixelated low-res edges */
+    clip-path: polygon(50% 2.5%, 100% 13.4%, 100% 86.6%, 50% 97.5%, 0% 86.6%, 0% 13.4%);
+}
+
+.award_bar div:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+#plurk-dashboard .user_link img {
+    border-radius: 5px;
+    transform: scale(0.95);
+    opacity: .95;
+    transition: transform .14s ease-out, opacity .14s ease-out;
+}
+
+#plurk-dashboard .user_link:hover img {
+    transform: scale(1);
+    opacity: 1;
 }
 
 .dash-segment .segment-content {
@@ -322,10 +381,6 @@ body {
 
 .name {
     font-weight: 500;
-}
-
-code {
-    font-family: Menlo, Consolas, Inconsolata, monospace;
 }
 
 input, textarea {
@@ -342,6 +397,8 @@ span.qualifier, span.m_qualifier {
     border: 0 !important;
     background: 0 !important;
     color: #888;
+    padding: 0;
+    font-weight: 420;
 }
 
 span.q_is { color: #e57c43; }
@@ -366,12 +423,8 @@ span.q_wonders { color: #2e4e9e; }
 span.q_whispers { color: #32007e; }
 span.q_replurks { color: #3b8610; }
 
-.tooltip_cnt {
-    border-radius: 3px;
-}
-
-#emoticon_selector, .qual_menu {
-    border-radius: 6px;
+.plurk_content a.hashtag, .plurk .text_holder a.hashtag {
+  font-size: inherit;
 }
 
 .text_holder br + br {
@@ -398,3 +451,173 @@ span.q_replurks { color: #3b8610; }
     background: rgba(255, 255, 255, 1);
     box-shadow: rgba(0,0,0,.25) 0 0 12px;
 }
+
+/* Global items */
+
+'{}:not(*) /*{*/, /*}*/
+#top_bar {
+    font-family: Ubuntu, Seravek, Corbel, "PT Sans", "PingFang TC", "Source Han Sans TC", sans-serif;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.bar-color {
+    background: rgba(0,0,0,.05);
+    backdrop-filter: blur(8px);
+    opacity: 1 !important;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.pop-view {
+    background: rgba(255,255,255,0.87);
+    backdrop-filter: blur(8px);
+    border: transparent 0 none;
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 3px rgba(0,0,0,.12), 0 4px 15px 0 rgba(0,0,0,.2);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.pop-menu {
+    font-family: "SF Pro", Inter, "Segoe UI", system-ui, sans-serif;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.pop-menu .pop-view-content {
+    padding: 4px;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.pop-menu ul li a:not(.no-hover):hover {
+    background: rgba(0,0,0,.085);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.pop-menu #language-selector select {
+    padding-left: 4px;
+    margin-left: -4px;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.pop-tooltip {
+    background: rgba(0,0,0,.87);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.qual_menu {
+    margin: -8px -9px;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.qual_menu li {
+  line-height: 16px;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.qual_menu li:first-child {
+  border-radius: 5px 5px 0 0;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.qual_menu li:last-child {
+  border-radius: 0 0 5px 5px;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#emoticon-selector {
+    background: rgba(255,255,255,.54);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#emoticon-selector-holder > :not(.scroll-holder) {
+    background: rgba(255,255,255,.33);
+    border-color: rgba(0,0,0,.15);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#emoticons-holder {
+    background: transparent;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list .pop-view-content {
+    background: transparent;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list ul {
+    background: transparent;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list li {
+    border: transparent 0 none;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list li:hover {
+    background: rgba(0,0,0,.085);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list li.new-noti {
+    background: rgba(255,103,93,.15);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list li.new-noti:hover {
+    background: rgba(255,103,93,.33);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list .header {
+    border-color: rgba(0,0,0,.05);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list .header .noti-alert-switch {
+    border-radius: 8px;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list .header .noti-alert-switch .pusher {
+    border-radius: 50%;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.friend_man {
+    border-radius: 14px;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list .requests .load-more {
+    border-radius: 4px;
+    margin: 0 8px;
+    background: transparent;
+    line-height: 2em;
+    color: #999;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#noti-list .requests .load-more:hover {
+    background: rgba(0,0,0,.085);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.pop-window.show {
+    backdrop-filter: blur(4px);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.colorbox .pop-window-view {
+    border-radius: 8px;
+    box-shadow: 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12), 0 11px 15px 0 rgba(0,0,0,.2);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+.more-options .option-limit {
+    background: rgba(255,255,255,.33);
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+textarea[spellcheck="false"] {
+    font-family: Menlo, Consolas, monospace;
+    font-size: 11px;
+} '{}
