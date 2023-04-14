@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Ubuntu'), url("https://poren.tw/plurk-theme/ubuntu/Ubuntu[wdth,wght].woff2") format('woff2');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Ubuntu-Italic'), url("https://poren.tw/plurk-theme/ubuntu/Ubuntu-Italic[wdth,wght].woff2") format('woff2');
+}
