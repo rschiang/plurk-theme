@@ -2,6 +2,22 @@
 
 /* Font styles */
 
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Ubuntu'), url("https://poren.tw/plurk-theme/ubuntu/Ubuntu[wdth,wght].woff2") format('woff2');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Ubuntu-Italic'), url("https://poren.tw/plurk-theme/ubuntu/Ubuntu-Italic[wdth,wght].woff2") format('woff2');
+}
+
 '{}:not(*) /*{*/, /*}*/
 body {
     font-family: Ubuntu, Seravek, Corbel, "PT Sans", "PingFang TC", "Source Han Sans TC", sans-serif;
@@ -14,14 +30,16 @@ code {
 /* Main layout */
 
 ._lch_ {
-    background-image: url('https://blog.poren.tw/theme/images/cover.jpg');
+    background-color: #0a1c36;
+    background-image: url("https://poren.tw/plurk-theme/starlight/background@2x.jpg");
+    background-image: image-set(url("https://poren.tw/plurk-theme/starlight/background@1x.webp") 1x, url("https://poren.tw/plurk-theme/starlight/background@2x.webp") 2x);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
 
 ._lc_ {
-    background: linear-gradient(to bottom, rgba(0,0,0,.06), rgba(0,0,0,0) 10%, rgba(0,0,0,.12) 50%,rgba(0,0,0,.54)) top center fixed;
+    background: linear-gradient(to bottom, rgba(0,0,0,.06), rgba(0,0,0,0) 10%, rgba(0,0,0,.12) 50%, rgba(0,0,0,.54)) top center fixed;
     background-size: cover;
     min-height: 100vh !important;
 }
@@ -117,9 +135,18 @@ code {
     margin-top: 0;
 }
 
-.response_box, .plurk_box .mini_form {
+.response_box, .plurk_box > div:not(.new_response_hint) {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(6px);
+}
+
+.plurk_box > div:last-child {
+    border-radius: 0 0 6px 6px;
+    min-height: 6px;
+}
+
+.plurk_box .mini_form {
+    background: transparent;
 }
 
 .response .plurk_cnt {
@@ -144,10 +171,6 @@ code {
 
 .response .response-manager > div:last-child:hover {
     border-radius: 0 3px 3px 0;
-}
-
-.plurk_box .mini_form {
-    border-radius: 0 0 6px 6px;
 }
 
 .mini_form .qual_holder {
@@ -314,26 +337,48 @@ code {
     margin-top: 6px;
 }
 
-#plurk-dashboard .dash-segment-profile #dash-profile .profile-info, #plurk-dashboard .nick_name {
-  color: rgba(255, 255, 255, .54);
-  opacity: 1;
+#plurk-dashboard .dash-segment-profile #dash-profile {
+    height: 6rem;
 }
 
 #plurk-dashboard .dash-segment #dash-profile img.profile-pic {
+    width: 5.5rem;
+    height: 5.5rem;
     border-radius: 1rem;
 }
 
-#plurk-dashboard .dash-segment-profile #dash-profile {
+#plurk-dashboard .dash-segment-profile #dash-profile #full_name {
+    margin-left: 6.5rem;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#plurk-dashboard .dash-segment-profile #dash-profile #full_name .display_name {
+    margin: 0 24px .125em 0;
+}
+
+#plurk-dashboard .nick_name, #plurk-dashboard .dash-segment-profile #dash-profile .profile-info {
+    color: rgba(255, 255, 255, .54);
+    opacity: 1;
+}
+
+#plurk-dashboard .dash-segment-profile #dash-profile .profile-icons {
+    position: absolute;
+    top: 2px;
+    bottom: auto;
+}
+
+#plurk-dashboard .dash-segment-profile #dash-additional-info #about_me {
     color: #fff;
 }
 
 #karma_holder {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .karma_hover {
-  font-family: inherit;
-  font-variant: proportional-nums; /* oldstyle-nums has no effect for Ubuntu font */
+    font-family: inherit;
+    font-variant: proportional-nums; /* oldstyle-nums has no effect for Ubuntu font */
 }
 
 #plurk-dashboard #dash-stats table th {
@@ -380,7 +425,7 @@ code {
 }
 
 .name {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 input, textarea {
@@ -424,11 +469,11 @@ span.q_whispers { color: #32007e; }
 span.q_replurks { color: #3b8610; }
 
 .plurk_content a.hashtag, .plurk .text_holder a.hashtag {
-  font-size: inherit;
+    font-size: inherit;
 }
 
 .text_holder br + br {
-    display : block;
+    display: block;
 }
 
 #mark_all_link {
@@ -464,6 +509,18 @@ span.q_replurks { color: #3b8610; }
     background: rgba(0,0,0,.05);
     backdrop-filter: blur(8px);
     opacity: 1 !important;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#top_bar .item-reversed {
+    background-color: rgba(255,255,255,0);
+    transition: background-color 0.14s ease-out;
+} '{}
+
+'{}:not(*) /*{*/, /*}*/
+#top_bar .item-reversed:hover {
+    background-color: rgba(255,255,255,.2) !important;
+    transition: background-color 0.14s ease-out;
 } '{}
 
 '{}:not(*) /*{*/, /*}*/
@@ -507,17 +564,17 @@ span.q_replurks { color: #3b8610; }
 
 '{}:not(*) /*{*/, /*}*/
 .qual_menu li {
-  line-height: 16px;
+    line-height: 16px;
 } '{}
 
 '{}:not(*) /*{*/, /*}*/
 .qual_menu li:first-child {
-  border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
 } '{}
 
 '{}:not(*) /*{*/, /*}*/
 .qual_menu li:last-child {
-  border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
 } '{}
 
 '{}:not(*) /*{*/, /*}*/
